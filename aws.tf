@@ -48,7 +48,7 @@ resource "aws_dynamodb_table" "terraform-state" {
 }
 
 resource "aws_s3_bucket_object" "upload-test-file"{
-  key                    = "first.txt"
+  key = "first.txt"
   bucket = var.aws_s3_bucket_name
   source = "first.txt"
   server_side_encryption = "aws:kms"

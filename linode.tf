@@ -1,5 +1,5 @@
 resource "linode_instance" "pubsub-qa" {
-    image = "linode/ubuntu21.04"
+    image = var.linode_image
     label = var.qa_label
     group = var.qa_group
     region = var.linode_region

@@ -1,13 +1,13 @@
 
-data "vercel_project_directory" "example" {
-  path = "../../frontend/"
+data "vercel_project_directory" "project_directory" {
+  path = var.project_directory
 }
 
-data "vercel_project" "example" {
+data "vercel_project" "project_data" {
   name = var.vercel_project_name
 }
 
-resource "vercel_deployment" "example" {
+resource "vercel_deployment" "deployment_info" {
   project_id = data.vercel_project.example.id
   files      = data.vercel_project_directory.example.files
   production = false
