@@ -16,10 +16,10 @@ resource "vercel_deployment" "deployment_info" {
     output_directory = "/build"
     build_command    = "CI=false npm run build"
     framework        = "create-react-app"
-    root_directory   = "../../frontend/"
+    root_directory   = vercel_project_directory.project_directory.path
   }
 
   environment = {
-    REACT_APP_PUBSUB_API_URL = cloudflare_record.qa-backend.name
+    URL = cloudflare_record.qa-backend.name
   }
 }
