@@ -1,7 +1,7 @@
 resource "cloudflare_record" "cloud_record"{
     zone_id = var.cloudflare_zone_id
-    name  = "demo"
-    value = "127.0.0.1"
+    name  = var.cloudflare_dns_name
+    value = var.cloudflare_dns_ip
     type = "A"
     proxied = true
 }
